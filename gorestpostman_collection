@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "49e0b4ee-84d1-49e7-bf95-e86ecc0f3354",
+		"name": "gorest.co.in",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Specific User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}public/v1/users/359",
+					"host": [
+						"{{url}}public"
+					],
+					"path": [
+						"v1",
+						"users",
+						"359"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser_Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Shashi Agarwal\",\r\n        \"email\": \"shashi_agarwal124415@koelpin.biz\",\r\n        \"gender\": \"male\",\r\n        \"status\": \"inactive\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}public/v1/users",
+					"host": [
+						"{{url}}public"
+					],
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}public/v1/users",
+					"host": [
+						"{{url}}public"
+					],
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}public/v1/users?name=Shashi Agarwal",
+					"host": [
+						"{{url}}public"
+					],
+					"path": [
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Shashi Agarwal"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get_MultipleQuearyParameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status test\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}public/v1/users/?gender=male&status=active",
+					"host": [
+						"{{url}}public"
+					],
+					"path": [
+						"v1",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "male"
+						},
+						{
+							"key": "status",
+							"value": "active"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "f9bc211a40d3234e820159504f453b642557c484dce1d9e272528d579edf08f3",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
